@@ -52,12 +52,13 @@ class Chessboard:
                     if self.board[row][col].color != piece.color:
                         killed_piece = self.board[row][col]
                         self.board[killed_piece.row][killed_piece.col] = None
+                        self.killed_pieces.append(killed_piece)
                         print(f"Killed piece at ({row}, {col})")
                         break
                     else:
                         row -= row_step
                         col -= col_step
-                        print(f"changed new positon is ({row}, {col})")
+                        print(f"changed new position is ({row}, {col})")
                         break
                 
             self.board[piece.row][piece.col] = None
